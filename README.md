@@ -1,4 +1,4 @@
-# WSO2 Identity Server Kubernetes Resources 
+## WSO2 Identity Server Kubernetes Resources 
 *Kubernetes Resources for container-based deployments of WSO2 Identity Server (IS)*
 
 kubernetes-is contains the deployment of a "scalable" unit of WSO2 IS server, 
