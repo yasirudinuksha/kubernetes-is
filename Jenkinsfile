@@ -11,8 +11,11 @@ podTemplate(label: 'wso2is',
     
     stage('Build Docker image') {
       container('wso2is') {
-        agent { dockerfile true }
-        //sh "docker build -t ${image} ."
+      
+        
+        sh "docker build -f kubernetes-is/dockerfiles/is/Dockerfile"
+
+//        sh "docker build -t ${image} ."
       }
     }
   }
