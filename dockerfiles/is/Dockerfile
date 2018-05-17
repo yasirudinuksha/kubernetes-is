@@ -80,7 +80,7 @@ COPY ${STARTUP_SCRIPT} ${USER_HOME}/scripts/init_carbon.sh
 
 # copy jdk, wso2 product distribution, jdbc driver and kubernetes dependency libraries to user's home directory
 COPY ${FILES}/${JDK_ARCHIVE} ${STARTUP_SCRIPT} ${FILES}/${JDBC_DRIVER} \
-     ${FILES}/${DNS_JAVA_LIB} ${FILES}/${KUBERNETES_MEMBERSHIP_SCHEME_LIB}  sudoers dockerfiles/is/change_ownership.sh ${USER_HOME}/
+     ${FILES}/${DNS_JAVA_LIB} ${FILES}/${KUBERNETES_MEMBERSHIP_SCHEME_LIB}  dockerfiles/is/sudoers dockerfiles/is/change_ownership.sh ${USER_HOME}/
      
 # install jdk, wso2 server, remove distributions and set folder permissions
 RUN unzip -q ${USER_HOME}/${WSO2_SERVER_PACK} -d ${USER_HOME}/ \
