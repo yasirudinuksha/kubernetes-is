@@ -52,6 +52,7 @@ ARG DNS_JAVA_LIB=dnsjava-2.1.*.jar
 # install required packages
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends --no-install-suggests \
+	   wget \
        	   zip \
            unzip \
            telnet \
@@ -61,8 +62,8 @@ RUN apt-get update \
 # create user group and user
 RUN useradd --system --uid ${USER_ID} --gid 0 --create-home --home-dir ${USER_HOME} \
 	--no-log-init ${USER}
-RUN wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u151-b12/e758a0de34e24606bca991d704f6dcbf/jdk-8u151-linux-x64.tar.gz	
-RUN wget --user-agent="testuser" --referer="http://connect.wso2.com/wso2/getform/reg/new_product_download"  http://product-dist.wso2.com/products/identity-server/5.5.0/wso2is-5.5.0.zip
+RUN wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u151-b12/e758a0de34e24606bca991d704f6dcbf/jdk-8u151-linux-x64.tar.gz -p ${USER_HOME}/	
+RUN wget --user-agent="testuser" --referer="http://connect.wso2.com/wso2/getform/reg/new_product_download"  http://product-dist.wso2.com/products/identity-server/5.5.0/wso2is-5.5.0.zip -p ${USER_HOME}/ 
 
 # copy jdk, wso2 product distribution, jdbc driver and kubernetes dependency libraries to user's home directory
 COPY ${FILES}/${JDK_ARCHIVE} ${STARTUP_SCRIPT} ${FILES}/${JDBC_DRIVER} \
