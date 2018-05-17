@@ -27,7 +27,7 @@ ARG USER_ID=1000000000
 ARG USER_HOME=/home/${USER}
 
 # Set startup script
-ARG STARTUP_SCRIPT=init_carbon.sh
+ARG STARTUP_SCRIPT=dockerfiles/is/init_carbon.sh
 
 # set local files directory
 ARG FILES=./files
@@ -76,7 +76,7 @@ RUN \
 
 RUN wget --user-agent="testuser" --referer="http://connect.wso2.com/wso2/getform/reg/new_product_download"  http://product-dist.wso2.com/products/identity-server/5.5.0/wso2is-5.5.0.zip 
 
-COPY dockerfiles/is/init_carbon.sh ${USER_HOME}/scripts/init_carbon.sh
+COPY ${STARTUP_SCRIPT} ${USER_HOME}/scripts/init_carbon.sh
 
 # copy jdk, wso2 product distribution, jdbc driver and kubernetes dependency libraries to user's home directory
 COPY ${FILES}/${JDK_ARCHIVE} ${STARTUP_SCRIPT} ${FILES}/${JDBC_DRIVER} \
