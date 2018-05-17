@@ -82,7 +82,7 @@ WORKDIR /data
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
 
-RUN wget --user-agent="testuser" --referer="http://connect.wso2.com/wso2/getform/reg/new_product_download"  http://product-dist.wso2.com/products/identity-server/5.5.0/wso2is-5.5.0.zip -p ${USER_HOME}/ 
+RUN wget --user-agent="testuser" --referer="http://connect.wso2.com/wso2/getform/reg/new_product_download"  http://product-dist.wso2.com/products/identity-server/5.5.0/wso2is-5.5.0.zip 
 
 # copy jdk, wso2 product distribution, jdbc driver and kubernetes dependency libraries to user's home directory
 COPY ${FILES}/${JDK_ARCHIVE} ${STARTUP_SCRIPT} ${FILES}/${JDBC_DRIVER} \
