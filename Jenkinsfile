@@ -11,7 +11,8 @@ podTemplate(label: 'wso2is',
     
     stage('Build Docker image') {
       container('wso2is') {
-        sh "docker build -t ${image} ."
+        agent { dockerfile true }
+        //sh "docker build -t ${image} ."
       }
     }
   }
