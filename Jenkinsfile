@@ -13,7 +13,7 @@ podTemplate(label: 'wso2is',
       container('wso2is') {
       
         
-        sh "docker build -f kubernetes-is/dockerfiles/is/Dockerfile"
+        sh "docker build -f kubernetes-is/dockerfiles/is/Dockerfile ." 
 
 //        sh "docker build -t ${image} ."
       }
