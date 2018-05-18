@@ -74,7 +74,7 @@ RUN \
   rm -rf /var/lib/apt/lists/* && \
   rm -rf /var/cache/oracle-jdk8-installer
 
-RUN wget --user-agent="testuser" --referer="http://connect.wso2.com/wso2/getform/reg/new_product_download"  http://product-dist.wso2.com/products/identity-server/5.5.0/wso2is-5.5.0.zip 
+RUN wget --user-agent="testuser" --referer="http://connect.wso2.com/wso2/getform/reg/new_product_download"  http://product-dist.wso2.com/products/identity-server/5.5.0/wso2is-5.5.0.zip -P /${USER_HOME} 
 
 COPY ${STARTUP_SCRIPT} ${USER_HOME}/scripts/init_carbon.sh
 
