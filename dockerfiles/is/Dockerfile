@@ -30,7 +30,7 @@ ARG USER_HOME=/home/${USER}
 ARG STARTUP_SCRIPT=dockerfiles/is/init_carbon.sh
 
 # set local files directory
-ARG FILES=./files
+ARG FILES=files
 
 # set jdk information
 ARG JDK_ARCHIVE=jdk-8u*-linux-x64.tar.gz
