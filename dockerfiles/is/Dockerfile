@@ -43,11 +43,11 @@ ARG WSO2_SERVER_PACK=${WSO2_SERVER}-${WSO2_SERVER_VERSION}.zip
 ARG WSO2_SERVER_HOME=${USER_HOME}/${WSO2_SERVER}-${WSO2_SERVER_VERSION}
 
 # set jdbc driver information
-ARG JDBC_DRIVER=mysql-connector-java-5*-bin.jar
+ARG JDBC_DRIVER=mysql-connector-java-5.1.31-bin.jar
 
 # set kubernetes dependency bundle information
 ARG KUBERNETES_MEMBERSHIP_SCHEME_LIB=kubernetes-membership-scheme-1.0.*.jar
-ARG DNS_JAVA_LIB=dnsjava-2.1.*.jar
+ARG DNS_JAVA_LIB=dnsjava-2.1.8.jar
 
 # install required packages
 RUN apt-get update \
