@@ -29,6 +29,9 @@ ARG USER_HOME=/home/${USER}
 # Set startup script
 ARG STARTUP_SCRIPT=dockerfiles/is/init_carbon.sh
 
+# Set startup script - inside 
+ARG STARTUP_SCRIPT_IN=init_carbon.sh
+
 # set local files directory
 ARG FILES=dockerfiles/is/files
 
@@ -90,8 +93,8 @@ RUN unzip -q ${USER_HOME}/${WSO2_SERVER_PACK} -d ${USER_HOME}/ \
     && cp ${USER_HOME}/${JDBC_DRIVER} ${USER_HOME}/${DNS_JAVA_LIB} ${WSO2_SERVER_HOME}/repository/components/lib/ \
     && cp ${USER_HOME}/${KUBERNETES_MEMBERSHIP_SCHEME_LIB} ${WSO2_SERVER_HOME}/repository/components/dropins/ \
     && mkdir -p ${USER_HOME}/scripts/ \
-    && cat ${USER_HOME}/${STARTUP_SCRIPT} > ${USER_HOME}/scripts/${STARTUP_SCRIPT} \
-    && rm ${USER_HOME}/${STARTUP_SCRIPT} \
+    && cat ${USER_HOME}/${STARTUP_SCRIPT_IN} > ${USER_HOME}/scripts/${STARTUP_SCRIPT_IN} \
+    && rm ${USER_HOME}/${STARTUP_SCRIPT_IN} \
     && rm ${USER_HOME}/${WSO2_SERVER_PACK} \
     && rm ${USER_HOME}/${JDK_ARCHIVE} \
     && rm ${USER_HOME}/${JDBC_DRIVER} \
