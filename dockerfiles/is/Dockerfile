@@ -96,7 +96,7 @@ RUN unzip -q ${USER_HOME}/${WSO2_SERVER_PACK} -d ${USER_HOME}/ \
     && cat ${USER_HOME}/${STARTUP_SCRIPT_IN} > ${USER_HOME}/scripts/${STARTUP_SCRIPT_IN} \
     && rm ${USER_HOME}/${STARTUP_SCRIPT_IN} \
     && rm ${USER_HOME}/${WSO2_SERVER_PACK} \
-    && rm ${USER_HOME}/${JDK_ARCHIVE} \
+    #&& rm ${USER_HOME}/${JDK_ARCHIVE} \
     && rm ${USER_HOME}/${JDBC_DRIVER} \
     && rm ${USER_HOME}/${DNS_JAVA_LIB} \
     && rm ${USER_HOME}/${KUBERNETES_MEMBERSHIP_SCHEME_LIB} \
