@@ -20,9 +20,9 @@ podTemplate(label: 'wso2is',
     
     stage('Build Docker image') {
       container('wso2is') {
-        sh "sudo docker tag docker.wso2.com/wso2is gcr.io/ipay-project/wso2is"
+        sh "docker tag docker.wso2.com/wso2is gcr.io/ipay-project/wso2is"
 
-        sh "sudo docker push gcr.io/ipay-project/wso2is"
+        sh "docker push gcr.io/ipay-project/wso2is"
       }
     }    
   }
