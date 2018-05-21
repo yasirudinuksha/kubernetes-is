@@ -6,9 +6,9 @@ running on <br> top of `Kubernetes` with `Docker` and `MySQL` support.
 
 ## Prerequisites
 
-* Install [Docker](https://www.docker.com/get-docker)
-* Setup a [Kubernetes Cluster](https://kubernetes.io/docs/setup/pick-right-solution/)
-* Install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+** Install [Docker](https://www.docker.com/get-docker)
+** Setup a [Kubernetes Cluster](https://kubernetes.io/docs/setup/pick-right-solution/)
+** Install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
  
 ## Quick Start Guide
 
