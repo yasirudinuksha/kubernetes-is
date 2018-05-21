@@ -27,7 +27,7 @@ podTemplate(label: 'wso2is',
     
     stage('Push to GCR') {
       container('wso2is') {
-        sh "sudo docker tag docker.wso2.com/wso2is gcr.io/ipay-project/wso2is"
+        sh "sudo docker tag 8ea6460d7499 gcr.io/ipay-project/wso2is"
 
         sh "sudo docker push gcr.io/ipay-project/wso2is"
       }
