@@ -17,19 +17,12 @@ podTemplate(label: 'wso2is',
 //       sh "docker build -t ${image} ."
       }
     }
-
-    stage('Test') {
-      container('wso2is') {
-
-        sh "docker images" 
-      }
-    }
     
     stage('Push to GCR') {
       container('wso2is') {
-        sh "sudo docker tag 8ea6460d7499 gcr.io/ipay-project/wso2is"
+        sh "docker tag 8ea6460d7499 gcr.io/ipay-project/wso2is"
 
-        sh "sudo docker push gcr.io/ipay-project/wso2is"
+        sh "docker push gcr.io/ipay-project/wso2is"
       }
     }    
   }
