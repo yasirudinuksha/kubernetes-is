@@ -49,6 +49,6 @@ eg: For pattern-1 change directory to `KUBERNETES_HOME/pattern-1` and perform th
 ##### 6. Access Management Console:
 Each deployment will expose publicly accessible hosts based on the pattern.
 To access the console in a test environment, add host entries in /etc/hosts file, pointing to respective Nginx 
-Ingress cluster IP and access from your favorite browser.
+Ingress cluster IP and access from your favorite Browser.
 
 
