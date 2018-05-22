@@ -25,7 +25,7 @@ podTemplate(label: 'wso2is',
         //sh "docker tag 8ea6460d7499 gcr.io/ipay-project/wso2is"
         //sh "gcloud auth configure-docker"
         //sh "docker push gcr.io/ipay-project/wso2is"
-        sh "gcloud auth configure-docker"
+        //sh "gcloud auth configure-docker"
         sh "docker tag ${image} gcr.io/ipay-project/wso2is"
         sh "docker push gcr.io/ipay-project/wso2is"
       }
